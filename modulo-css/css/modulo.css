@@ -1,0 +1,78 @@
+.example {
+    width: 100%;
+    height:100%;
+    margin: 0px;
+    border-bottom: solid 1px black;
+    padding: 15px 0;
+}
+.example ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 2;
+}
+.example li {
+    list-style-type: none;
+    display: block;
+    position: relative;
+    max-height: 15rem;
+    width: 50%;
+    background: rgba(50, 50, 50, 1);
+}
+
+.example li img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+
+}
+
+.example li p {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+    margin-top: 50%;
+    width: 100%;
+}
+
+.example li:nth-last-child(2n):first-child p,
+.example li:nth-last-child(2n):first-child ~ li p {
+    background-color: red;
+}
+
+.example li:nth-last-child(2n+1):first-child p,
+.example li:nth-last-child(2n+1):first-child ~ li p {
+
+    background-color: yellow;
+
+}
+
+.example li:nth-last-child(2n+1):first-child:last-child,
+.example li:nth-last-child(2n+1):first-child ~ li:last-child {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.example li:nth-last-child(2n+1):first-child:last-child p,
+.example li:nth-last-child(2n+1):first-child ~ li:last-child p {
+    position: initial;
+    margin: 0;
+    width: 50%;
+    min-height: 100%;
+    justify-content: flex-end;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.example li:last-child:first-child {
+    width: 100%;
+}
+
+.example li:nth-last-child(2n+1):first-child ~ li:last-child {
+    width: 100%;
+}
