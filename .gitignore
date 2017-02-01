@@ -1,2 +1,5 @@
 .idea/
 *.iml
+template/css/**.css
+**/jquery*.js
+node_modules/
