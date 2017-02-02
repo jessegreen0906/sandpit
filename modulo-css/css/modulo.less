@@ -1,9 +1,12 @@
+@import "../../template/css/variables/scaffolding.less";
+@import "../../template/css/variables/colors.less";
+
 .example {
     width: 100%;
     height:100%;
-    margin: 0px;
-    border-bottom: solid 1px black;
-    padding: 15px 0;
+    margin: 0;
+    border-bottom: solid 1px @black;
+    padding: @global-padding 0;
 }
 .example ul {
     padding: 0;
@@ -16,9 +19,8 @@
     list-style-type: none;
     display: block;
     position: relative;
-    max-height: 15rem;
     width: 50%;
-    background: rgba(50, 50, 50, 1);
+    background: @dark-grey;
 }
 
 .example li img {
@@ -32,21 +34,23 @@
 .example li p {
     position: absolute;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.8);
+    background: @white;
     margin-bottom: 0;
     margin-top: 50%;
     width: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
 }
 
 .example li:nth-last-child(2n):first-child p,
 .example li:nth-last-child(2n):first-child ~ li p {
-    background-color: red;
+    background-color: @light-grey;
 }
 
 .example li:nth-last-child(2n+1):first-child p,
 .example li:nth-last-child(2n+1):first-child ~ li p {
 
-    background-color: yellow;
+    background-color: @impact-orange;
 
 }
 
@@ -64,7 +68,6 @@
     width: 50%;
     min-height: 100%;
     justify-content: flex-end;
-
     padding: 1rem;
     box-sizing: border-box;
 }
