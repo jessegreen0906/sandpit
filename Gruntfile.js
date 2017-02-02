@@ -10,7 +10,15 @@ module.exports = function(grunt) {
                     dest: 'template',
                     ext: '.css'
 
-                }],
+                },
+                {
+                    expand: true,
+                    cwd: 'modulo-css',
+                    src: ['css/*.less'],
+                    dest: 'modulo-css',
+                    ext: '.css'
+
+                },],
             },
         },
     });
