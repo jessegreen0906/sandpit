@@ -18,7 +18,14 @@ module.exports = function(grunt) {
                     dest: 'modulo-css',
                     ext: '.css'
 
-                },],
+                },
+                {
+                    expand: true,
+                    cwd: 'form-template',
+                    src: ['css/*.less'],
+                    dest: 'form-template',
+                    ext: '.css'
+                }],
             },
         },
     });

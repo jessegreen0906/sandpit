@@ -1,3 +1,5 @@
+@import './breakpoints.less';
+
 @font-face {
 	font-family: 'meltix';
 	src: url("./fonts/Meltix_Regular.otf");
@@ -5,10 +7,20 @@
 }
 
 @basic-font: 'meltix';
-@base-font-size: 20px;
+@base-font-size: 28px;
+@base-sm-font-size: @base-font-size;
+@base-md-font-size: 20px;
 
 html {
-	font-size: @base-font-size;
+	font-size: @base-sm-font-size;
+}
+
+@media (min-device-width: @md-min-width) {
+
+	html {
+		font-size: @base-md-font-size;
+	}
+
 }
 
 h1, p {
@@ -28,4 +40,9 @@ h2 {
 h3, h4, h5, h6 {
 	font-size: 1rem;
 
+}
+
+label, legend {
+	font-family: @basic-font;
+	font-size: 1rem;
 }

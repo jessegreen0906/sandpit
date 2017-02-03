@@ -1,0 +1,37 @@
+@import "../../template/css/variables/colors.less";
+@import "../../template/css/variables/breakpoints.less";
+@import "../../template/css/variables/scaffolding.less";
+
+form {
+	margin: 1rem 0;
+
+	padding: 0.5rem;
+
+	color: @chalk;
+	background: @charcoal
+}
+
+.form-input {
+	width: 100%;
+	margin: 0.5rem 0;
+}
+
+.form-input input, .form-input select, .form-input progress {
+	font-family: meltix;
+	font-size: 1rem;
+	background: @chalk;
+	color: @charcoal;
+	border: none;
+	border-radius: 0.25rem;
+}
+
+.form-input input button {
+	font-family: meltix;
+	font-size: 1rem;
+}
+
+@media (min-device-width: @sm-min-width) {
+	input {
+		margin-left: @global-margin;
+	}
+}
