@@ -16,13 +16,64 @@ form {
 	margin: 0.5rem 0;
 }
 
-.form-input input, .form-input select, .form-input progress {
+form>.form-input {
+	margin-top: 1rem;
+}
+
+.form-input label {
+	width: 100%;
+	display: inline-block;
+}
+
+@media (min-device-width: @sm-min-width) {
+	.form-input label {
+		width: auto;
+		display: inline-block;
+	}
+}
+
+.form-input fieldset .form-input{
+	margin-left: 1rem;
+}
+
+@media (min-device-width: @sm-min-width) {
+	.form-input label {
+		margin-top: 0.1rem;
+		position: absolute;
+	}
+}
+
+.form-input input[type="button"]:focus, .form-input input[type="submit"]:focus,
+.form-input input[type="button"]:hover, .form-input input[type="submit"]:hover {
+	background-color: @impact-orange;
+	color: @chalk;
+	cursor: pointer;
+}
+
+.form-input input, .form-input select, .form-input progress, .form-input meter {
 	font-family: meltix;
 	font-size: 1rem;
 	background: @chalk;
 	color: @charcoal;
-	border: none;
+	border: solid @chalk 2px;
 	border-radius: 0.25rem;
+}
+
+.form-input input.invalid, .form-input select.invalid, .form-input progress.invalid, .form-input meter.invalid {
+	border: solid @error 2px;
+}
+
+.form-input textarea {
+	margin-top: 1.5rem;
+}
+
+@media (min-device-width: @sm-min-width) {
+	.form-input input, .form-input select, .form-input progress, .form-input meter {
+		margin-left: 10rem;
+	}
+	.form-input input[type="checkbox"], .form-input input[type="radio"] {
+		margin-left: 9rem;
+	}
 }
 
 .form-input input button {
@@ -33,5 +84,56 @@ form {
 @media (min-device-width: @sm-min-width) {
 	input {
 		margin-left: @global-margin;
+		margin-right: 100%;
 	}
 }
+
+.form-input input[type="file"] + label {
+	display: inline-block;
+	position: static;
+	background: @chalk;
+	color: @charcoal;
+	width: auto;
+	margin-left: 10rem;
+	padding: 0.2rem 0.25rem;
+	border-radius: 0.25rem;
+}
+.form-input input[type="file"] + label:hover,
+.form-input input[type="file"]:focus + label {
+	background: @impact-orange;
+	color: @chalk;
+	cursor: pointer;
+}
+
+.form-input input[type="file"]:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.form-input input[type="file"] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.form-input span.error-message {
+	display: inline-block;
+	margin-left: 10rem;
+	margin-top: 0.5rem;
+	font-family: meltix;
+	padding: 0.25rem;
+	background-color: @error;
+	visibility: hidden;
+	position: absolute;
+}
+
+.form-input input.invalid + span.error-message {
+	visibility: visible;
+	position: static;
+}
+
+
+
