@@ -7,15 +7,15 @@
 }
 
 @basic-font: 'meltix';
-@base-font-size: 28px;
+@base-font-size: 20px;
 @base-sm-font-size: @base-font-size;
-@base-md-font-size: 20px;
+@base-md-font-size: 28px;
 
 html {
 	font-size: @base-sm-font-size;
 }
 
-@media (min-device-width: @md-min-width) {
+@media (min-width: @md-min-width) {
 
 	html {
 		font-size: @base-md-font-size;
