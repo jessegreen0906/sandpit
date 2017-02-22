@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/jessegreen0906/sandpit#readme",
   "devDependencies": {
-    "grunt-cli": "1.*",
+    "grunt": "1.*",
     "grunt-contrib-less": "1.*"
   }
 }
