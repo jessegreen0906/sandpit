@@ -28,9 +28,20 @@ module.exports = function(grunt) {
                 }],
             },
         },
+        includes:{
+            files:{
+	            cwd: 'template',
+	            src:['test.html'],
+	            dest: 'template/temp/',
+	            options:{
+		            template: 'template.html',
+	            },
+            },
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-includes');
 
-    grunt.registerTask('default', ['less']);
+    grunt.registerTask('default', ['less','includes']);
 };
