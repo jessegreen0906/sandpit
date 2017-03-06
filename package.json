@@ -18,6 +18,7 @@
   "homepage": "https://github.com/jessegreen0906/sandpit#readme",
   "devDependencies": {
     "grunt": "1.*",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-csslint": "^2.0.0",
     "grunt-contrib-less": "1.*",
     "grunt-eslint": "^19.0.0",
