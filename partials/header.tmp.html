@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+	</title>
+	<!-- build:style template -->
+	<!-- /build -->
+	<!-- build:script template -->
+	<!-- /build -->
+	<link href="../src/template/css/style.css" rel="stylesheet" type="text/css"/>
+	<script>
+		$(document).ready(function () {
+			var filename = $(location).attr('pathname');
+			filename = filename.split('/').pop();
+			filename = filename.substr(0, filename.lastIndexOf('.'));
+			filename = filename.replace('-', ' ')
+			var firstLetter = filename.toLowerCase().charAt(0);
+			filename = firstLetter.toUpperCase()+filename.substr(1);
+
+			$('h1, title').html(filename);
+		});
+	</script>
+</head>
+<body>
+<div class="dec-stripes">
+	<div class="dec-stripe"></div>
+	<div class="dec-stripe"></div>
+</div>
+<div class="wrapper">
+	<div class="heading">
+		<div class="content-container"><h1>Jesse's sandpit</h1></div>
+	</div>
+
+	<div class="main content-container">

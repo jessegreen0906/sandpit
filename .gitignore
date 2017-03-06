@@ -3,3 +3,4 @@
 **/css/*.css
 **/jquery*.js
 node_modules/
+build/
