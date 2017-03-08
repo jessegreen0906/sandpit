@@ -1,6 +1,6 @@
 .idea/
 *.iml
-**/css/*.css
-**/jquery*.js
+src/assets/css/**/*.css
+src/assets/js/**/*.js
 node_modules/
 build/

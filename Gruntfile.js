@@ -5,32 +5,20 @@ module.exports = function(grunt) {
             development: {
                 files: [{
                     expand: true,
-                    cwd: 'template',
-                    src: ['css/*.less'],
-                    dest: 'template',
+                    cwd: 'src/assets/css/',
+                    src: ['**/*.less'],
+                    dest: 'src/assets/css/',
                     ext: '.css'
 
                 },
-                {
-                    expand: true,
-                    cwd: 'modulo-css',
-                    src: ['css/*.less'],
-                    dest: 'modulo-css',
-                    ext: '.css'
-
-                },
-                {
-                    expand: true,
-                    cwd: 'form-template',
-                    src: ['css/*.less'],
-                    dest: 'form-template',
-                    ext: '.css'
-                }],
+				]
             },
        },
 		htmlbuild: {
 			dist: {
-				src: 'src/**/*.html',
+				expand: true,
+				cwd: 'src/',
+				src: 'content/**/*.html',
 				dest: 'build/',
 				options: {
 					sections: {
@@ -40,11 +28,10 @@ module.exports = function(grunt) {
 						}
 					},
 					styles: {
-						template: ['build/assets/css/template/css/style.css'],
-						form: ['build/assets/css/form-template/css/style.css'],
+						template: ['build/assets/css/global/style.css'],
 					},
 					scripts: {
-						template: ['src/template/js/jquery-3.1.0.js']
+						template: ['build/assets/js/jquery-3.1.0.js']
 					}
 				}
 			}
@@ -52,8 +39,7 @@ module.exports = function(grunt) {
 	    copy: {
 		    main: {
 			    files: [
-				    {expand: true, cwd: 'src/', src: ['**/img/*'], dest: 'build/assets/img/'},
-				    {expand: true, cwd: 'src/', src: ['**/css/*.css'], dest: 'build/assets/css/'},
+				    {expand: true, cwd: 'src/', src: ['assets/**/*'], dest: 'build/'},
 				    
 			    ]
 		    }
@@ -64,5 +50,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-html-build');
 
-    grunt.registerTask('default', ['less','htmlbuild', 'copy']);
+    grunt.registerTask('default', ['less','copy','htmlbuild']);
 };
