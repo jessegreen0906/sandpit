@@ -1,4 +1,33 @@
 <!-- build:section recursive template.header -->
 <!-- /build -->
+<link type="text/css" rel="stylesheet" href="../../assets/css/modules/form-template/form-template.css" />
+<form>
+	<div class="form-input">
+		<label for="username">Username</label><input type="text" id="username" class="" />
+		<span class="error-message">Invalid username</span>
+	</div>
+	<div class="form-input">
+		<label for="password">First name</label><input type="password" id="password" class="" />
+		<span class="error-message">Invalid Password</span>
+	</div>
+	<div class="form-input">
+		<input type="submit" value="Login" id="submit" />
+	</div>
+</form>
+<script>
+	$('form').submit(function(event){
+		console.log('Form firing');
+		var payload = {
+			action:'read',
+		}
+		payload = JSON.stringify(payload);
+		$.ajax({
+			url: '/sandpit/src/server/userMgr.php',
+			data: payload,
+			method: 'POST',
+		});
+		event.preventDefault();
+	})
+</script>
 <!-- build:section recursive template.footer -->
 <!-- /build -->
