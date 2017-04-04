@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 			dist: {
 				expand: true,
 				cwd: 'src/',
-				src: 'content/**/*.html',
+				src: 'content/**/*.*',
 				dest: 'build/',
 				options: {
 					sections: {
