@@ -1,26 +1,5 @@
-/**
- * Created by jesse on 5/04/2017.
- */
-// var Slackbot = require('slackbots');
-//
-// console.log('slackbot starting');
-// var bot = new Slackbot({
-// 	token:'xoxb-164806226039-rHMIOVUzOpVKPjI58U4EnfdW',
-// 	name: 'catfan'
-// });
-//
-// bot.on('start', function () {
-// 	console.log('Sending start message');
-// 	bot.postMessageToChannel('general', 'start');
-// });
-//
-// bot.on('message', function(data) {
-// 	console.log('new message');
-// 	console.log(data);
-// 	if (data.type!='hello'&&data.type!='reconnect_url'&&data.username!='catfan') {
-// 		bot.postMessageToChannel('general', 'message');
-// 	}
-// });
+//Catfan slackbot
+
 const fs = require('fs');
 var Botkit = require('botkit');
 var request = require('request');
@@ -44,44 +23,39 @@ controller.on('ambient', function(bot, message){
 
 controller.on('file_share', function (bot, message) {
 	console.log('J-debug: file shared function firing');
-	var regEx = /.*cat.*/;
+	var regEx = /.*[Cc][Aa][Tt].*/;
 	if(regEx.test(message.text)) {
-		bot.reply(message, 'Is this a cat picture');
+		bot.reply(message, 'Is this a cat picture? I love cats. I\'ll give you one back');
 		var response = selectResponse();
-		response.channels = message.channel;
-		response.token = bot.config.token;
-		request.post({
-			url: 'https://slack.com/api/files.upload',
-			formData: {
-				token: response.token,
-				title: 'title',
-				file: response.file,
-				filename: response.filename,
-				filetype: response.filetype,
-				text: response.text,
-				channels: response.channels
-			}
-		}, function (err, response) {
-			if(err) {
-				console.log(JSON.parse(err.body));
-			} else {
-				console.log(JSON.parse(response.body));
-			}
-		});
-
-		// bot.api.files.upload(response);
-		// bot.reply(message, response);
+		bot.reply(message, response);
 	}
-	bot.reply(message, 'Someone shared a file');
 });
 
 function selectResponse() {
 	var response = {};
-	var filepath = './images/deadCat.jpeg';
-	response.file = fs.createReadStream(filepath, 'binary');
-	response.filename = 'deadCat.jpeg';
-	response.filetype = 'text';
-	response.text = 'Cats? I love cats. Here\'s a picture for you';
+	response.username = "catfan";
+	var selector = Math.floor(Math.random() * 5);
+	var url = [
+		"http://cdn.ebaumsworld.com/mediaFiles/picture/635984/80880181.jpg",
+		"https://i.ytimg.com/vi/7UyXLgr5f88/maxresdefault.jpg",
+		"http://media.boreme.com/post_media/2009/dead-cat.jpg",
+		"http://s2.quickmeme.com/img/fa/faa8ec8d871ce82131b9f1bf0c8d07dccba3277a66b40231d64db9b97315f511.jpg",
+		"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRPuv8p5-GBssceHMxgJyHmyUQnVtpzNvcPb1MyuUy2ilHBUEzlw"
+	];
+	var msg = [
+		"The most useful sort of cat... a rug",
+		"This is the best looking cat imaginable",
+		"The best pose a cat can be in",
+		"The cutest cat possible",
+		"Some wisdom about cats"
+	];
+	
+	response.attachments = [
+		{
+			"image_url": url[selector],
+			'text': msg[selector]
+		}
+	];
 
 	return response;
 }
