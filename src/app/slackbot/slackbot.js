@@ -12,11 +12,9 @@ var bot = controller.spawn({
 }).startRTM();
 
 controller.on('ambient', function(bot, message){
-	console.log('J-debug: Handling message');
 	if(message.type == 'message') {
-		bot.reply(message, 'Yo returned');
+	
 	} else {
-		console.log('J-Debug: No yo message');
 	}
 
 });
