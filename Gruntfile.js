@@ -50,5 +50,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-html-build');
 
-    grunt.registerTask('default', ['less','copy','htmlbuild']);
+    grunt.registerTask('default', ['less','htmlbuild','copy']);
 };
