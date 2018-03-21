@@ -1,0 +1,140 @@
+@import "variables.scss";
+
+.header {
+
+	// Global styles
+	// Styles that apply to all versions of the page .header
+
+	display: flex;
+	position: fixed;
+
+	justify-content: space-between;
+
+	min-width: 100%;
+	min-height: 2rem;
+	
+	a {
+		text-decoration: none;
+	}
+	
+	&.dark-theme {
+		color: $dark-theme-font-color;
+		background: $dark-theme-background-color;
+	}
+
+
+	&.variant-1 {
+		// Variant 1 styles
+		font-size: 2rem;
+		
+		& ul a {
+			// First level of menu
+			display: inline-block;
+		}
+		
+	}
+	
+}
+// Styles to refactor
+//.header.variant-1 .menu-text.lvl-1 > a {
+//	padding: 0.5rem;
+//}
+//
+//.header.variant-1 .menu-text.lvl-1 a span {
+//	border: solid 1px transparent;
+//}
+//
+//.header.variant-1 .menu-text.lvl-1 a:hover,
+//.header.variant-1 .menu-text.lvl-1 a:focus {
+//	background-color: darkgrey;
+//}
+//
+//.header.variant-1 .menu-text.lvl-1 a:hover span,
+//.header.variant-1 .menu-text.lvl-1 a:focus span {
+//	border-bottom-color: white;
+//}
+//
+//.menu.lvl-2 {
+//	position: absolute;
+//	background-color: darkgrey;
+//	margin: 0;
+//	padding: 0.5rem 0;
+//	list-style: none;
+//
+//}
+//
+//.menu.lvl-2 li {
+//	border-bottom: solid 1px white;
+//	padding: 0 0.5rem;
+//	margin: 0 0.25rem;
+//}
+//
+//.menu.lvl-2 a{
+//	display: none;
+//	animation-delay: 1s;
+//	animation-name: menu-block;
+//}
+//
+//.menu.lvl-2 a:hover,
+//.menu.lvl-2 a:focus {
+//	display: block;
+//}
+//
+//ul.menu.lvl-2 li:last-child {
+//	border-bottom-color: transparent;
+//}
+//
+//.menu.lvl-2 li:hover {
+//	background-color: darkslategrey;
+//}
+//
+//.menu-text.lvl-1 a:hover + .menu.lvl-2 a,
+//.menu-text.lvl-1 a:focus + .menu.lvl-2 a{
+//	display: block;
+//	transition-delay: 0.2ms;
+//}
+//
+//.menu.lvl-3 {
+//	display: none;
+//
+//	position: absolute;
+//	margin-top: -2.55rem;
+//	margin-left: -0.5rem;
+//	margin-left: calc(100% - 0.75rem);
+//	list-style: none;
+//	padding: 0.25rem;
+//	min-width: 100%;
+//	background: black;
+//
+//}
+//
+//@keyframes menu-block {
+//	from {
+//		display: block;
+//	}
+//	to {
+//		display: none;
+//	}
+//}
+//
+//.menu-text .lvl-2 li:hover .menu.lvl-3 {
+//	display: block;
+//}
+//
+//.menu-text .lvl-2 li.has-child::after {
+//	content: ">";
+//	margin-right: 0.5rem;
+//	transition: all 0.5s ease-in-out;
+//}
+//
+//.menu-text .lvl-2 li.has-child:hover::after {
+//	transition: all 0.5s ease-in-out;
+//	margin-left: 0.5rem;
+//	margin-right: 0;
+//}
+//
+//.width-constraint {
+//	width: 100%;
+//	max-width: 1280px;
+//	margin: auto;
+//}
