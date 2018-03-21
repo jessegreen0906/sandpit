@@ -1,0 +1,138 @@
+@import "../../global/variables/variables.less";
+
+button {
+  border-style: none;
+  font-size: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button {
+  padding: 0.3rem;
+  background: @accent-color;
+  display: inline-flex;
+  color: @white;
+  text-decoration: none;
+}
+
+.button span {
+  border-bottom: solid 1px transparent;
+  line-height: 1.25rem;
+}
+
+.button:hover span {
+  border-bottom-color: @white;
+}
+
+.card {
+  color: @white;
+  background-color: @secondary-color;
+  padding: 0.3rem;
+
+  .img-cont {
+    overflow: hidden;
+    img {
+      min-width: 100%;
+    }
+  }
+
+  p {
+    margin: 0.2rem;
+  }
+}
+
+.link-collection {
+  background-color: @secondary-color;
+  padding: 0.5rem;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0.25rem
+  }
+
+  li {
+    width: fit-content;
+    color: @white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    display: inline-flex;
+    line-height: 1.2rem;
+  }
+  a:hover {
+    background-color: @accent-color;
+  }
+  a:hover li {
+    border-bottom: 1px solid @white;
+  }
+}
+
+.seg-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin: 0.5rem 0;
+  background-color: @secondary-color;
+  min-width: 100%;
+
+  button {
+    order: 1;
+
+    padding: 0.3rem;
+    background: @secondary-color;
+    display: inline-flex;
+    color: @white;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+
+    border-top: none;
+    border-right: none;
+
+    font-family: @basic-font;
+    font-size: 1rem;
+
+    flex-grow: 1;
+
+    &:first-of-type {
+      border-left: solid 1px transparent;
+    }
+
+    &:hover, &:focus {
+      background-color: @accent-color;
+
+    }
+
+    &.selected {
+      background-color: @light-grey;
+      color: @secondary-color;
+
+      &:hover, &:focus {
+        background-color: @accent-color;
+
+      }
+    }
+  }
+
+  .content {
+    order: 2;
+    display: none;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    background-color: @primary-color;
+    width: 100%;
+  }
+  .content .inner-wrap {
+    min-width: 100%;
+  }
+  .content:first-of-type {
+    display: flex;
+  }
+}
