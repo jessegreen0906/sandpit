@@ -1,0 +1,214 @@
+scss_files: './*.scss'
+
+linters:
+  BangFormat:
+    enabled: true
+    space_before_bang: true
+    space_after_bang: false
+
+  BemDepth:
+    enabled: false
+
+  BorderZero:
+    enabled: true
+
+  ChainedClasses:
+    enabled: false
+
+  ColorKeyword:
+    enabled: true
+    severity: error
+
+  ColorVariable:
+    enabled: true
+
+  Comment:
+    enabled: true
+
+  DebugStatement:
+    enabled: true
+
+  DeclarationOrder:
+    enabled: true
+
+  DisableLinterReason:
+    enabled: false
+
+  DuplicateProperty:
+    enabled: true
+    severity: warning
+
+  ElsePlacement:
+    enabled: true
+
+  EmptyLineBetweenBlocks:
+    enabled: true
+    ignore_single_line_blocks: false
+
+  EmptyRule:
+    enabled: true
+
+  ExtendDirective:
+    enabled: false
+
+  FinalNewline:
+    enabled: true
+    present: false
+
+  HexLength:
+    enabled: true
+    style: long
+
+  HexNotation:
+    enabled: true
+
+  HexValidation:
+    enabled: true
+
+  IdSelector:
+    enabled: true
+    severity: warning
+
+  ImportantRule:
+    enabled: true
+    severity: error
+
+  ImportPath:
+    enabled: true
+    filename_extension: true
+
+  Indentation:
+    enabled: true
+    character: tab
+    width: 1
+
+  LeadingZero:
+    enabled: true
+    style: include_zero
+
+  LengthVariable:
+    enabled: false
+
+  MergeableSelector:
+    enabled: true
+
+  NameFormat:
+    enabled: true
+    allow_leading_underscore: false
+
+  NestingDepth:
+    enabled: true
+    max_depth: 3
+
+  PlaceholderInExtend:
+    enabled: true
+
+  PrivateNamingConvention:
+    enabled: false
+
+  PropertyCount:
+    enabled: false
+
+  PropertySortOrder:
+    enabled: true
+    order: smacss
+
+  PropertySpelling:
+    enabled: true
+
+  PropertyUnits:
+    enabled: true
+    global: ['rem', '%']
+    properties:
+      border: ['px']
+      font-size: ['px']
+
+  PseudoElement:
+    enabled: true
+
+  QualifyingElement:
+    enabled: true
+    severity: warning
+
+  SelectorDepth:
+    enabled: true
+    max_depth: 4
+    severity: warning
+
+  SelectorFormat:
+    enabled: true
+
+  Shorthand:
+    enabled: true
+
+  SingleLinePerProperty:
+    enabled: true
+
+  SingleLinePerSelector:
+    enabled: true
+
+  SpaceAfterComma:
+    enabled: true
+
+  SpaceAfterComment:
+    enabled: true
+
+  SpaceAfterPropertyColon:
+    enabled: true
+
+  SpaceAfterPropertyName:
+    enabled: true
+
+  SpaceAfterVariableColon:
+    enabled: true
+
+  SpaceAfterVariableName:
+    enabled: true
+
+  SpaceAroundOperator:
+    enabled: true
+
+  SpaceBeforeBrace:
+    enabled: true
+
+  SpaceBetweenParens:
+    enabled: true
+
+  StringQuotes:
+    enabled: true
+
+  TrailingSemicolon:
+    enabled: true
+
+  TrailingWhitespace:
+    enabled: true
+
+  TrailingZero:
+    enabled: true
+
+  TransitionAll:
+    enabled: true
+
+  UnnecessaryMantissa:
+    enabled: true
+
+  UnnecessaryParentReference:
+    enabled: true
+
+  UrlFormat:
+    enabled: true
+
+  UrlQuotes:
+    enabled: true
+
+  VariableForProperty:
+    enabled: true
+    properties:
+      - color
+      - font
+
+  VendorPrefix:
+    enabled: true
+
+  ZeroUnit:
+    enabled: true
