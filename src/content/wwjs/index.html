@@ -1,0 +1,146 @@
+<!-- build:section recursive template.header -->
+<!-- /build -->
+<link type="text/css" rel="stylesheet" href="../../assets/css/modules/elements/elements.css" />
+<style>
+	.seg-content .content .inner-wrap {
+		display: flex;
+	}
+	.seg-content .content img {
+		width: 100%;
+		height: auto;
+		margin-right: 5px;
+	}
+	
+	.seg-content .content h2 {
+		font-family: 'meltix', "Arial Narrow";
+	}
+	.seg-content .content p {
+		font-family: "Arial Narrow";
+		margin-left: 5px;
+	}
+
+</style>
+<div class="container">
+	<div class="seg-content">
+		<button style="display:none;" class="selected" id="start">Can I ask you another question?</button>
+		<div class="content" style="display: flex;">
+			<div class="inner-wrap">
+				<div style="min-width:50%;width:50%;">
+					<img src="../../assets/img/wwjs/blank_face.jpg" />
+				</div>
+				<p>What would you like to ask me?</p>
+			</div>
+		</div>
+		<button>Could you look over this design for me?</button>
+		<div class="content">
+			<div class="inner-wrap">
+				<div style="min-width:50%;width:50%;">
+					<img src="../../assets/img/wwjs/beer_stein.jpg" />
+				</div>
+				<div>
+					<h2>Could you look over this design for me?</h2>
+					<p>Looks good, but it would require a lot of dev effort. You'll need to change everything.</p>
+				</div>
+			</div>
+		</div>
+		<button>How would you feel about this potential new feature?</button>
+		<div class="content">
+			<div class="inner-wrap">
+				<div style="min-width:50%;width:50%;">
+					<img src="../../assets/img/wwjs/iron_throne.jpg" />
+				</div>
+				<div>
+					<h2>Could you look over this design for me?</h2>
+					<p>Do you really need it? Let's descope it from MVP.</p>
+				</div>
+			</div>
+		</div>
+		<button>Can you check I'm not doing anything wrong? I can't seem to access environments</button>
+		<div class="content">
+			<div class="inner-wrap">
+				<div style="min-width:50%;width:50%;">
+					<img src="../../assets/img/wwjs/scary.jpg" />
+				</div>
+				<div>
+					<h2>Could you look over this design for me?</h2>
+					<p>Oh, hi Chad. Thought you were someone else.</p>
+				</div>
+			</div>
+		</div>
+		<button>Could you approve this pull request for me?</button>
+		<div class="content">
+			<div class="inner-wrap">
+				<div style="min-width:50%;width:50%;">
+					<img src="../../assets/img/wwjs/jesse_hitler.jpg" />
+				</div>
+				<div>
+					<h2>Could you look over this design for me?</h2>
+					<p>Tab indentation please.</p>
+				</div>
+			</div>
+		</div>
+		<button>Is it possible to do *blank*?</button>
+		<div class="content">
+			<div class="inner-wrap">
+				<div style="min-width:50%;width:50%;">
+					<img src="../../assets/img/wwjs/mortar_board.jpg" />
+				</div>
+				<div>
+					<h2>Could you look over this design for me?</h2>
+					<p>Anything is possible if you have enough time, money, etc. The question is do you have enough time, money, etc...</p>
+				</div>
+			</div>
+		</div>
+		<button>Can I ask you a quick question?</button>
+		<div class="content">
+			<div class="inner-wrap">
+				<div style="min-width:50%;width:50%;">
+					<img src="../../assets/img/wwjs/tiger_tamer.jpg" />
+				</div>
+				<div>
+					<h2>Could you look over this design for me?</h2>
+					<p>No such thing.</p>
+				</div>
+			</div>
+		</div>
+		<button>Can I get you to do *blank*?</button>
+		<div class="content">
+			<div class="inner-wrap">
+				<div style="min-width:50%;width:50%;">
+					<img src="../../assets/img/wwjs/beach.jpg" />
+				</div>
+				<div>
+					<h2>Could you look over this design for me?</h2>
+					<p>No. I'm on holidays.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$('.seg-content button').click(function(el){
+		var parent = $(el.target).parent();
+		$(parent).children('button.selected').removeClass('selected');
+		$(el.target).addClass('selected');
+		$(parent).children('div.content').css('display', 'none');
+		$(el.target).next('div.content').css('display', 'flex');
+		
+		console.log(el);
+		console.log(el.target);
+		$('#start').is(el.target);
+		
+		if($('#start').is(el.target)) {
+			$('#start').css('display', 'none');
+			$('button').not('#start').css('display', 'flex');
+			console.log('firing');
+		} else {
+			
+			$('button').css('display', 'none');
+			$('#start').css('display', 'flex');
+			console.log('not firing');
+		}
+	});
+
+</script>
+<!-- build:section recursive template.footer -->
+<!-- /build -->
