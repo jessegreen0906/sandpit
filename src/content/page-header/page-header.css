@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  min-width: 100%;
+  min-height: 2rem; }
+  .header a {
+    text-decoration: none; }
+  .header.dark-theme {
+    color: white;
+    background: black; }
+  .header.variant-1 {
+    font-size: 2rem; }
+    .header.variant-1 ul a {
+      display: inline-block; }
+
+/*# sourceMappingURL=page-header.css.map */
