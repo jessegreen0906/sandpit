@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
+	    babel: {
+	    
+	    },
        less: {
             development: {
                 files: [{
@@ -14,6 +17,17 @@ module.exports = function(grunt) {
 				]
             },
        },
+		sass: {
+       	    dist: {
+       	    	files: [{
+       	    		expand: true,
+		            cwd: 'src/content/page-header/',
+		            src: ['*.scss'],
+		            dest: 'src/content/page-header/',
+		            ext: '.css'
+	            }]
+            }
+		},
 		htmlbuild: {
 			dist: {
 				expand: true,
@@ -49,6 +63,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-html-build');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
-    grunt.registerTask('default', ['less','copy','htmlbuild']);
+    grunt.registerTask('default', ['less','sass','htmlbuild','copy']);
 };
