@@ -1,7 +1,7 @@
 var jsandpit = jsandpit || {};
 
 jsandpit.arrangeGridElements = function(elements) {
-	var htmlString = '';
+	var htmlString = "";
 	var standardUnit = 160;
 	var minHeight = jsandpit.gridMinDimension(elements, 'height');
 	var minWidth = jsandpit.gridMinDimension(elements, 'width');
