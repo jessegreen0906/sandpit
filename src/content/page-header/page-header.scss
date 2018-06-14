@@ -1,39 +1,37 @@
-@import "variables.scss";
+@import 'variables';
 
 .header {
 
-	// Global styles
-	// Styles that apply to all versions of the page .header
+	//  Global styles
+	//	Styles that apply to all versions of the page .header
 
 	display: flex;
 	position: fixed;
-
 	justify-content: space-between;
-
 	min-width: 100%;
 	min-height: 2rem;
-	
+
 	a {
 		text-decoration: none;
 	}
-	
+
 	&.dark-theme {
-		color: $dark-theme-font-color;
 		background: $dark-theme-background-color;
+		color: $dark-theme-font-color;
 	}
 
 
 	&.variant-1 {
 		// Variant 1 styles
 		font-size: 2rem;
-		
+
 		& ul a {
 			// First level of menu
 			display: inline-block;
 		}
-		
+
 	}
-	
+
 }
 // Styles to refactor
 //.header.variant-1 .menu-text.lvl-1 > a {
