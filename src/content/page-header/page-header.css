@@ -7,8 +7,8 @@
   .header a {
     text-decoration: none; }
   .header.dark-theme {
-    color: white;
-    background: black; }
+    background: black;
+    color: white; }
   .header.variant-1 {
     font-size: 2rem; }
     .header.variant-1 ul a {
